@@ -1,0 +1,30 @@
+{
+  "name": "node-crud",
+  "version": "1.0.0",
+  "description": "CRUD de clientes",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./bin/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raphaelpereiravalle/node-crud.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raphaelpereiravalle/node-crud/issues"
+  },
+  "homepage": "https://github.com/raphaelpereiravalle/node-crud#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "debug": "^4.1.1",
+    "express": "^4.15.3",
+    "http": "0.0.1-security",
+    "mongoose": "^5.9.16"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
