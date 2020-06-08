@@ -16,6 +16,7 @@ server.on('error', onError);
 server.on('onListening', onListening);
 
 console.log('API rodando na porta ' + port);
+
 // Função para validar porta
 function normalizePort(val) {
     const port = parseInt(val, 1);
