@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 
 const schema = new Schema({
     client: {
-        type: mongoose.Schema.ty,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'Client'
     },
     number: {
@@ -40,4 +40,4 @@ const schema = new Schema({
     }],
 });
 
-module.exports = mongoose.model('Order', schema)
+module.exports = mongoose.model('Order', schema);

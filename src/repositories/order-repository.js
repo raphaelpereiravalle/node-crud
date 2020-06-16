@@ -23,8 +23,9 @@ exports.update = async(id, data) => {
     await Order.findByIdAndUpdate(id, {
         $set: {
             number: data.number,
-            createDate: Date.now
-            //,items.quantity: data.quantity
+            createDate: Date.now,
+            status: data.status,
+            items: data.items
         }
     });
 }

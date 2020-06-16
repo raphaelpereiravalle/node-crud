@@ -10,23 +10,23 @@ const app = express();
 // Conexão de banco de dados
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useUnifiedTopology', true);
+//mongoose.set('useCreateIndex', true);
 mongoose.connect(config.connectionString);
 
+// Carregar Models
+//const Client = require('./models/client');
+const Product = require('./models/product'); 
+const Order = require('./models/order');
 
 // Carregar Rotas
 const indexRoute = require('./routes/index-route');
 const productRoute = require('./routes/product-route');
 //const customerRoute = require('./routes/customer-route');
-//const orderRoute = require('./routes/order-route');
+const orderRoute = require('./routes/order-route');
 
-// Carregar Models
-/*
-const Client = require('./models/client');
-const Order = require('./models/order');*/
-const Product = require('./models/product'); 
 
 app.use(bodyParser.json({
-    ///  limit: '5mb'
+    limit: '5mb'
 }));
 
 app.use(bodyParser.urlencoded({ 
@@ -37,7 +37,7 @@ app.use(bodyParser.urlencoded({
 app.use('/', indexRoute);
 app.use('/products', productRoute);
 //app.use('/customers', customerRoute);
-//app.use('/orders', orderRoute);
+app.use('/orders', orderRoute);
 
 // Adicionar objetos e funções
 module.exports = app;

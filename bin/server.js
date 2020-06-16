@@ -14,7 +14,6 @@ const server = http.createServer(app);
 server.listen(port);
 server.on('error', onError);
 server.on('onListening', onListening);
-
 console.log('API rodando na porta ' + port);
 
 // Função para validar porta

@@ -10,12 +10,12 @@ exports.get = async () => {
     });
     return res;
 }
-/* 
+
 exports.getById = async(id) => {
     const res = await Product.find({
         id: id,
-        active = true
-    }, 'title price description tags')
+        active: true
+    }, 'title price description tags');
 }
 
 //Create
@@ -29,8 +29,10 @@ exports.update = async(id, data) => {
     await Product.findByIdAndUpdate(id, {
         $set: {
             title: data.title,
+            code: data.code,
             description: data.description,
-            price: data.price
+            price: data.price,
+            tags : data.tags
         }
     });
 }
@@ -38,4 +40,4 @@ exports.update = async(id, data) => {
 //Delete
 exports.delete = async(id) => {
     await Product.findOneAndRemove(id);
-} */
+}

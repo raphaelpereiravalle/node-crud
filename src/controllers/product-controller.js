@@ -13,7 +13,7 @@ exports.get = async (_, res) => {
         });
     }
 }
-/* 
+
 exports.getById = async (req, res, next) => {
     try {
         let data = await repository.getById(req.params.id);
@@ -27,7 +27,15 @@ exports.getById = async (req, res, next) => {
 
 exports.post = async (req, res, next) => {
     try {
-        await repository.create(req.body);
+        await repository.create({
+            title: req.body.title,
+            code: req.body.code,
+            description: req.body.description,
+            price: req.body.price,
+            tags: req.body.tags,
+            active: true
+        });
+
         res.status(201).send({
             massege: 'Produto cadastrado com sucesso!' 
         });
@@ -38,11 +46,11 @@ exports.post = async (req, res, next) => {
     }
 }
 
-exports.put = async () => {
+exports.put = async (req, res) => {
     try {
         await repository.update(req.params.id, req.body);
         res.status(200).send({
-            massege: 'Produto cadastrado com sucesso!' 
+            massege: 'Produto atualizado com sucesso!' 
         });
     } catch (e) {
         res.status(500).send({
@@ -51,15 +59,15 @@ exports.put = async () => {
     }
 }
 
-exports.delete = async () => {
+exports.delete = async (req, res) => {
     try {
-        await repository.delete(req.params.id, req.body);
+        await repository.delete(req.params.id);
         res.status(200).send({
-            massege: 'Produto cadastrado com sucesso!' 
+            massege: 'Produto deletado com sucesso!' 
         });
     } catch (e) {
         res.status(500).send({
             massege: 'Falha ao processar sua requisição'
         });
     }
-} */
+}
