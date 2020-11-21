@@ -11,6 +11,7 @@ exports.get = async () => {
     return res;
 }
 
+//Search
 exports.getById = async(id) => {
     const res = await Product.find({
         id: id,

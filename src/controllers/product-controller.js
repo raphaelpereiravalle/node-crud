@@ -35,7 +35,6 @@ exports.post = async (req, res, next) => {
             tags: req.body.tags,
             active: true
         });
-
         res.status(201).send({
             massege: 'Produto cadastrado com sucesso!' 
         });
