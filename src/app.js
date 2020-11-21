@@ -14,14 +14,14 @@ mongoose.set('useUnifiedTopology', true);
 mongoose.connect(config.connectionString);
 
 // Carregar Models
-//const Client = require('./models/client');
+const Client = require('./models/client');
 const Product = require('./models/product'); 
 const Order = require('./models/order');
 
 // Carregar Rotas
 const indexRoute = require('./routes/index-route');
+const clientRoute = require('./routes/client-route');
 const productRoute = require('./routes/product-route');
-//const customerRoute = require('./routes/customer-route');
 const orderRoute = require('./routes/order-route');
 
 
@@ -35,8 +35,8 @@ app.use(bodyParser.urlencoded({
 
 // Carregar Controller
 app.use('/', indexRoute);
+app.use('/clients', clientRoute);
 app.use('/products', productRoute);
-//app.use('/customers', customerRoute);
 app.use('/orders', orderRoute);
 
 // Adicionar objetos e funções

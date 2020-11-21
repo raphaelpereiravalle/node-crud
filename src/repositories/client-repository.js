@@ -3,7 +3,6 @@
 const mongoose = require('mongoose');
 const Client = mongoose.model('Client');
 
-
 //Read
 exports.get = async () => {
     const res = await Client.find({
